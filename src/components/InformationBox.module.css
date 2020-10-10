@@ -1,0 +1,12 @@
+.boxBackground{
+    background-image: linear-gradient( rgb(121, 167, 31)10% , yellowgreen 90% )
+}
+
+.container{
+    display:flex;
+    height: 30px;
+    align-items: center;
+    padding-left: 20px;
+    color: darkgreen;
+    font-weight: 400;
+}

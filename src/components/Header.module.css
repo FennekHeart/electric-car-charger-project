@@ -14,14 +14,13 @@
 .leftHeader{
     display: flex;
     align-items: center;
-    width: 65%;
+    width: 70%;
 }
 
 .rightHeader{
     display: flex;
     align-items: center;
-    align-content: flex-end;
-    width: 35%;
+    width: 60%;
     justify-content: flex-end;
 }
 
@@ -81,4 +80,33 @@
 .signButton:hover{
     background-image: radial-gradient(white  , white,  rgb(209, 209, 209) );
     border: 2px solid green;
+}
+
+@media (max-width:1115px){
+    .brand{
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width:650px){
+    .rightHeader{
+        display:grid;
+    }
+    .loginButton{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 25px;
+        width: 80px;
+    }
+    .signButton{
+        height: 25px;
+        width: 80px;
+    }
+    .brand{
+        font-size: 18px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
 }
