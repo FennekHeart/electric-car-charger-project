@@ -36,7 +36,6 @@ export default class Map extends React.Component {
             maxZoom: 20,
             maxNativeZoom: 17,
         }).addTo(this.map);
-
         //Oulu
         L.marker([65.055363, 25.456706], {icon: mapIcon}).addTo(this.map)
                             .bindPopup('OULU Charge station<br>Fast charge status:<br>Slow charge status:');
