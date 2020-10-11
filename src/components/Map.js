@@ -3,8 +3,6 @@ import L from 'leaflet';
 import styled from 'styled-components';
 import 'leaflet/dist/leaflet.css';
 import icon from './mapIcon.png'
-//import icon from 'leaflet/dist/images/marker-icon.png';
-//import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 const Wrapper = styled.div`
     margin-left: auto;
@@ -20,18 +18,15 @@ var mapIcon = L.icon({
     popupAnchor: [0, -60]
 
 })
-/*let DefaultIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow
-});
 
-L.Marker.prototype.options.icon = DefaultIcon;*/
+
 
 export default class Map extends React.Component {
 
     componentDidMount(){
+
         this.map = L.map('map', {
-            center: [63, 26.4],
+            center: [63.7, 26.4],
             zoom: 6,
             zoomControl: false
         });
@@ -41,6 +36,7 @@ export default class Map extends React.Component {
             maxZoom: 20,
             maxNativeZoom: 17,
         }).addTo(this.map);
+
         //Oulu
         L.marker([65.055363, 25.456706], {icon: mapIcon}).addTo(this.map)
                             .bindPopup('OULU Charge station<br>Fast charge status:<br>Slow charge status:');
@@ -101,9 +97,15 @@ export default class Map extends React.Component {
         //Kemijärvi
         L.marker([66.717135, 27.427773], {icon: mapIcon}).addTo(this.map)
                             .bindPopup('KEMIJÄRVI Charge station<br>Fast charge status:<br>Slow charge status:');
+        
     }
 
     render(){
+
+        
         return <Wrapper width="80%" height="720px" id="map" />
+
+
+
     }
 }
