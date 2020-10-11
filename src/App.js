@@ -1,19 +1,26 @@
 import React from 'react';
 import './App.css';
-import BottomInfo from './components/BottomInfo';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './routes/Home'
+import About from './routes/About'
+import Stations from './routes/Stations'
 import Header from './components/Header';
 import InformationBox from './components/InformationBox';
-import Map from './components/Map';
-import SideMenu from './components/SideMenu';
+import BottomInfo from './components/BottomInfo';
 
 function App() {
   return (
     <div>
-      <Header />
-      <InformationBox topic='NOTICE' body='Development of web application is still ongoing!' />
-      <Map />
-      <SideMenu />
-      <BottomInfo />
+      <Router>
+        <Header />
+        <InformationBox topic='NOTICE' body='Development of web application is still ongoing!' />
+          <Switch>
+            <Route path="/" exact component={ Home } />
+            <Route path="/about" component={ About } />
+            <Route path="/stations" component={ Stations } />
+          </Switch>
+        <BottomInfo />
+      </Router>
     </div>
   );
 }

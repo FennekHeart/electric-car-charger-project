@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SideMenu() {
+export default function Stations() {
     return (
         <div>
-            SideMenu
+            The Stations page
         </div>
     )
 }
