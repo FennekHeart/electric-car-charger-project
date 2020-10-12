@@ -23,7 +23,10 @@ var mapIcon = L.icon({
 
 export default class Map extends React.Component {
 
+
     componentDidMount(){
+
+
 
         this.map = L.map('map', {
             center: [63.7, 26.4],
@@ -36,6 +39,8 @@ export default class Map extends React.Component {
             maxZoom: 20,
             maxNativeZoom: 17,
         }).addTo(this.map);
+
+        
         //Oulu
         L.marker([65.055363, 25.456706], {icon: mapIcon}).addTo(this.map)
                             .bindPopup('OULU Charge station<br>Fast charge status:<br>Slow charge status:');
