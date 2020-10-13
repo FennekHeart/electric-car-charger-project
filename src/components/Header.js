@@ -18,8 +18,12 @@ export default function Header() {
                     </Link>
                 </div>
                 <div className={ styles.rightHeader}>
-                    <button className={ styles.loginButton }>Sign in</button>
-                    <button className={ styles.signButton }>SIGN UP</button>
+                    <Link to="/signin">
+                    <button className={ styles.loginButton }>Login</button>
+                    </Link>
+                    <Link to="/signup">
+                    <button className={ styles.signButton }>SIGN UP</button>                 
+                    </Link>
                 </div>
             </div>
         </div>

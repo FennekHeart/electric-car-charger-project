@@ -61,7 +61,7 @@ export default class Map extends React.Component {
     render(){
 
         
-        return <Wrapper width="80%" height="720px" id="map" />
+        return <Wrapper width="80%" height="100vh" id="map" />
 
     };
 

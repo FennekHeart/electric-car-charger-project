@@ -7,6 +7,8 @@ import Stations from './routes/Stations'
 import Header from './components/Header';
 import InformationBox from './components/InformationBox';
 import BottomInfo from './components/BottomInfo';
+import SignUp from './routes/SignUp';
+import SignIn from './routes/SignIn';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" exact component={ Home } />
             <Route path="/about" component={ About } />
             <Route path="/stations" exact component={ Stations } />
+            <Route path="/signup" exact component={ SignUp } />
+            <Route path="/signin" exact component={ SignIn }/>
           </Switch>
         <BottomInfo />
       </Router>

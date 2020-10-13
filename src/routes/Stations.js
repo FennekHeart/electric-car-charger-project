@@ -16,7 +16,6 @@ function Stations() {
         );
 
         const stations = await data.json();
-        console.log(stations.chargers);
         setStations(stations.chargers);
         
     };
@@ -35,7 +34,7 @@ function Stations() {
                     </div>
                 </div>
             </div>
-            <Link className={ styles.stationButton } to={`/stations/${station.id}`}>
+            <Link className={ styles.stationButton } to={`/stations/station${station.id}`}>
             <div >Reserve</div>            
             </Link>
             </div>

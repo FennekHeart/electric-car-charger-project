@@ -61,3 +61,10 @@
     cursor: pointer;
     background-image: linear-gradient(rgb(166, 201, 98) , white , rgb(166, 201, 98) );
 }
+
+@media (max-width:800px){
+    .stationButton{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

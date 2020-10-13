@@ -73,7 +73,7 @@
 .signButton{
     color: black;
     background-color:white;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 25px;
     font-size: 14px;
     height: 40px;
@@ -83,7 +83,7 @@
 }
 .signButton:hover{
     background-image: radial-gradient(white  , white,  rgb(209, 209, 209) );
-    border: 2px solid green;
+    border: 2px solid black;
 }
 
 @media (max-width:1115px){
