@@ -1,9 +1,8 @@
-import React from 'react';
+import React from 'react'
 import L from 'leaflet';
 import styled from 'styled-components';
 import 'leaflet/dist/leaflet.css';
 import icon from './mapIcon.png'
-import chargerData from '../charger-data.json'
 
 const Wrapper = styled.div`
     margin-left: auto;
@@ -24,10 +23,12 @@ var mapIcon = L.icon({
 
 export default class Map extends React.Component {
 
-
-    componentDidMount(){
-
-
+    constructor(props) {
+        super(props);
+        this.state = { stations: [] }
+    }
+    
+    componentDidMount(){        
 
         this.map = L.map('map', {
             center: [63.7, 26.4],
@@ -40,22 +41,28 @@ export default class Map extends React.Component {
             maxZoom: 20,
             maxNativeZoom: 17,
         }).addTo(this.map);
-        var stations = [];
-        stations.push(chargerData.chargers)
-        console.log(stations)
 
-        stations[0].map(station => (
-            L.marker([station.lat, station.lng], {icon: mapIcon}).addTo(this.map)
-                            .bindPopup(station.name + ' Charge station<br>Fast charge status: ' + station.faststatus + '<br>Slow charge status: ' + station.slowstatus)
-        ))
+        const fetchStations = async () => {
+            const data = await fetch(
+                'http://localhost:8080/chargers'
+            )
+
+            const stationData = await data.json();
+            this.setState({stations: stationData.chargers});
+
+            this.state.stations.map(station => (
+                L.marker([station.lat, station.lng], {icon: mapIcon}).addTo(this.map)
+                                .bindPopup(station.name + ' Charge station<br>Fast charge status: ' + station.faststatus + '<br>Slow charge status: ' + station.slowstatus)
+            ))
+        };
+        fetchStations();
+
     }
-
     render(){
 
         
         return <Wrapper width="80%" height="720px" id="map" />
 
+    };
 
-
-    }
 }

@@ -1,17 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Stations.module.css'
-import chargerData from '../charger-data.json'
+import { Link } from 'react-router-dom'
 
+function Stations() {
 
+    useEffect(() => {
+        fetchStations();
+    }, []);
 
-var stations = [];
-stations.push(chargerData.chargers)
-console.log(stations)
+    const [stations, setStations] = useState([]);
 
-const Test = ({stations}) => (
-    
+    const fetchStations = async () => {
+        const data = await fetch(
+            'http://localhost:8080/chargers'
+        );
+
+        const stations = await data.json();
+        console.log(stations.chargers);
+        setStations(stations.chargers);
+        
+    };
+
+    return (
         <div className={ styles.container }>
-        {stations[0].map(station => (
+        {stations.map(station => (
             <>
             <div className={ styles.supercontainer }>
             <div className={ styles.station } >
@@ -23,20 +35,14 @@ const Test = ({stations}) => (
                     </div>
                 </div>
             </div>
-            <div className={ styles.stationButton }>Reserve</div>
+            <Link className={ styles.stationButton } to={`/stations/${station.id}`}>
+            <div >Reserve</div>            
+            </Link>
             </div>
             </>
         ))}
         </div>
-
-  );
-  
-  
-
-export default function Stations() {
-    return (
-        <div>
-        <Test stations={stations} />
-        </div>
     )
 }
+
+export default Stations;
