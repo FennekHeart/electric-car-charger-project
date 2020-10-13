@@ -35,7 +35,7 @@ function Stations() {
                 </div>
             </div>
             <Link className={ styles.stationButton } to={`/stations/station${station.id}`}>
-            <div >Reserve</div>            
+            <div >View</div>            
             </Link>
             </div>
             </>

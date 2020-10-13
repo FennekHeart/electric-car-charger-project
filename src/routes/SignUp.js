@@ -1,45 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 import styles from './SignUp.module.css'
-import { Link } from 'react-router-dom'
+import AlertComponent from '../components/AlertComponent';
+import SignUpForm from '../components/SignUpForm';
 
 function Signup() {
 
-
-
-
-
-
+    const [errorMessage, updateErrorMessage] = useState(null);
+    const [successMessage, updateSuccessMessage] = useState(null);
 
     return (
+        <>
         <div className={ styles.container }>
             <div className={ styles.formContainer }>
-                <h1>SIGN UP:</h1>
-                <div className={ styles.formItem }>
-                    <label className={ styles.formLabel }>Username:</label><br></br>
-                    <input type="text"
-                    className={ styles.inputBox }
-                    id="username"
-                    placeholder="Username"/>
-                </div>
-                <div className={ styles.formItem }>
-                    <label className={ styles.formLabel }>Password:</label><br></br>
-                    <input type="password"
-                    className={ styles.inputBox }
-                    id="password"
-                    placeholder="Password"/>
-                </div>
-                <div className={ styles.formItem }>
-                    <label className={ styles.formLabel }>Confirm Password:</label><br></br>
-                    <input type="password"
-                    className={ styles.inputBox }
-                    id="confirmPassword"
-                    placeholder="Confirm Password"/>
-                </div>
-                <button type="submit" className={ styles.signButton }>Register</button>
-                <p>Already have an account? <Link to="/signin">Sign In</Link></p>
+                <SignUpForm showError={ updateErrorMessage } showSuccess={ updateSuccessMessage} />
+                <AlertComponent errorMessage = { errorMessage } hideError = { updateErrorMessage } 
+                successMessage = { successMessage } hideSuccess = {updateSuccessMessage} />
             </div>
         </div>
+        </>
     );
 }
 
