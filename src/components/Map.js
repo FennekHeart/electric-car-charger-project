@@ -44,7 +44,7 @@ export default class Map extends React.Component {
 
         const fetchStations = async () => {
             const data = await fetch(
-                'http://localhost:8080/chargers'
+                'http://localhost:4000/chargers'
             )
 
             const stationData = await data.json();
