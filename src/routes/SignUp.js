@@ -4,6 +4,7 @@ import styles from './SignUp.module.css'
 import AlertComponent from '../components/AlertComponent';
 import SignUpForm from '../components/SignUpForm';
 
+
 function Signup() {
 
     const [errorMessage, updateErrorMessage] = useState(null);
@@ -13,7 +14,7 @@ function Signup() {
         <>
         <div className={ styles.container }>
             <div className={ styles.formContainer }>
-                <SignUpForm showError={ updateErrorMessage } showSuccess={ updateSuccessMessage} />
+                <SignUpForm showError={ updateErrorMessage } showSuccess={ updateSuccessMessage } />
                 <AlertComponent errorMessage = { errorMessage } hideError = { updateErrorMessage } 
                 successMessage = { successMessage } hideSuccess = {updateSuccessMessage} />
             </div>

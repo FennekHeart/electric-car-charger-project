@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from '../routes/SignUp.module.css'
 
 
@@ -12,11 +12,11 @@ function AlertComponent(props) {
         >
             <div className={ styles.error }>
                 <span className={ styles.error } >{ props.errorMessage }</span>
-                <alert className={ styles.success } >{ props.successMessage }</alert>
+                <span className={ styles.success } >{ props.successMessage }</span>
             </div>
             
         </div>
     )
 } 
 
-export default AlertComponent
+export default AlertComponent;

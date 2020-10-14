@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import '../App.css';
 import styles from './SignIn.module.css'
 import { Link } from 'react-router-dom'
+import ProtectedRoute from '../components/ProtectedRoute'
+
+
 
 function SignIn() {
+
+    const [ isUserLogged, setIsUserLogged ] = useState(false);
+
+
+
+
     return (
         <div className={ styles.container }>
             <div className={ styles.formContainer }>
