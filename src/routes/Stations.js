@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Component} from 'react'
 import styles from './Stations.module.css'
 import { Link } from 'react-router-dom'
 
@@ -34,7 +34,7 @@ function Stations() {
                     </div>
                 </div>
             </div>
-            <Link className={ styles.stationButton } to={`/stations/station${station.id}`}>
+            <Link className={ styles.stationButton } to={`/stations/${station.id}`}>
             <div >View</div>            
             </Link>
             </div>

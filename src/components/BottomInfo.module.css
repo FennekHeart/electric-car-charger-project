@@ -1,6 +1,10 @@
 .backgroundColor{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     height: 200px;
     background-color: yellowgreen;
+    padding-left: 50px;
+    padding-bottom:10px;
+    color: rgb(64, 92, 23);
 }

@@ -9,6 +9,8 @@ import InformationBox from './components/InformationBox';
 import BottomInfo from './components/BottomInfo';
 import SignUp from './routes/SignUp';
 import SignIn from './routes/SignIn';
+import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './routes/Profile'
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
             <Route path="/stations" exact component={ Stations } />
             <Route path="/signup" exact component={ SignUp } />
             <Route path="/signin" exact component={ SignIn }/>
+            <ProtectedRoute path="/profile" exact component={ Profile }/>
           </Switch>
         <BottomInfo />
       </Router>

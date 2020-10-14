@@ -4,7 +4,7 @@ import styles from './BottomInfo.module.css'
 export default function BottomInfo() {
     return (
         <div className={ styles.backgroundColor }>
-            BottomInfo
+            This is a students schoolwork. pls no bully
         </div>
     )
 }

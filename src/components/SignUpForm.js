@@ -39,19 +39,18 @@ function SignUpForm(props) {
             }
             Axios.post('http://localhost:8080/user/register', payload)
                 .then(function (response) {
-                    if(response.status === 200){
+                    if(response.data === "OK"){
                             setState(prevState => ({
                                 ...prevState,
                                 'successMessage' : 'Registration successful. Redirecting to home page..'
                             }))
                             props.showError(null)
                             props.showSuccess("Registration Successful!")
-                    } 
-                    if(response.data === "Username Taken"){
+                    } else if(response.data === "Username Taken"){
                         props.showError("Username already in use")
                         props.showSuccess(null)
-                    }
-                    else{
+                    } else {
+                        console.log(response.data)
                         props.showError("Some error ocurred");
                         props.showSuccess(null);
                     }
