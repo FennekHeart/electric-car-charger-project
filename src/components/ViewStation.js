@@ -18,7 +18,7 @@ export default function ViewStation(props) {
             "id":state.id
         }
         console.log(payload)
-        await Axios.get('http://localhost:4000/getstation', payload)
+        await Axios.get('http://52.91.107.120/getstation', payload)
         .then(response => {
             console.log(response)
         })

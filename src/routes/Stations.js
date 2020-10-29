@@ -12,7 +12,7 @@ function Stations() {
 
     const fetchStations = async () => {
         const data = await fetch(
-            'http://localhost:4000/chargers'
+            'http://localhost:8080/chargers'
         );
 
         const stations = await data.json();

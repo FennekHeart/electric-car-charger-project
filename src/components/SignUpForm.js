@@ -37,7 +37,7 @@ function SignUpForm(props) {
                 "username":state.username,
                 "password":state.password,
             }
-            Axios.post('http://localhost:4000/user/register', payload)
+            Axios.post('http://localhost:8080/user/register', payload)
                 .then(function (response) {
                     if(response.data === "OK"){
                             setState(prevState => ({
